@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap-5.3.5-dist/css/bootstrap.min.css">
+    <title>Document</title>
+</head>
+<body>
+
+   <div class="container py-5">
+        <h2 class="mb-3">Registration Form</h2>
+        <form id="register" class="needs-validation" novalidate>
+          <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" class="form-control" id="username" required>
+            <div class="invalid-feedback">
+              Please enter a username.
+            </div>
+          </div>
+    
+          <div class="mb-3">
+            <label for="email" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="email" required>
+            <div class="invalid-feedback">
+              Please enter a valid email address.
+            </div>
+          </div>
+    
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" required minlength="6">
+            <div class="invalid-feedback">
+              Password must be at least 6 characters.
+            </div>
+          </div>
+    
+          <button type="submit" class="btn btn-primary">Register</button>
+        </form>
+   </div>
+  
+    <!-- Script for Validation -->
+    <script>
+     const form = document.querySelector('#register');
+
+    form.addEventListener('submit', function(e) {
+           if (!form.checkValidity()) {
+            e.preventDefault(); 
+             form.classList.add('was-validated'); 
+            } else {
+                 alert("Registration successful!");
+            }
+           });
+
+    </script>
+      
+    <script src="bootstrap-5.3.5-dist/js/bootstrap.bundle.min.js"></script>
+
+
+    </body>
+</html>
